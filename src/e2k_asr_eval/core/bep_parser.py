@@ -1,15 +1,10 @@
 """BEP辞書ファイルの解析処理。"""
 
-import re
-from collections.abc import Generator
 from pathlib import Path
 
-import pandas as pd
 import structlog
-from pydantic import BaseModel
 
 from e2k_asr_eval.schemas import WordEntry
-from e2k_asr_eval.utils.logging_config import setup_logging
 
 
 logger = structlog.get_logger(__name__)
