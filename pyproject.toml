@@ -1,14 +1,37 @@
 [project]
-name = "project-name"
+name = "e2k-asr-eval"
 dynamic = ["version"]
-description = "A modern Python project template optimized for Claude Code with strict guardrails"
+description = "English to Kana ASR evaluation toolkit for Japanese Hiragana ASR models"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    # 主要な依存関係をここに記載
+    # コア依存関係
     "structlog>=25.4.0",
     "rich>=13.7.0", # structlogのカラフルなコンソール出力用
     "pydantic>=2.11.7",
+    # ASR/音声処理
+    "transformers>=4.45.0",
+    "torch>=2.5.0",
+    "librosa>=0.10.0",
+    "soundfile>=0.12.0",
+    "datasets>=3.0.0",
+    # OpenAI TTS
+    "openai>=1.50.0",
+    # データ処理
+    "pandas>=2.2.0",
+    "numpy>=1.26.0",
+    # 評価指標
+    "jiwer>=3.0.0",
+    # HTTP/非同期処理
+    "httpx>=0.27.0",
+    "aiofiles>=24.1.0",
+    # その他
+    "click>=8.1.7",
+    "python-dotenv>=1.0.0",
+    "ml-dtypes>=0.5.0",
+    "accelerate>=1.10.1",
+    "sentencepiece>=0.2.1",
+    "parler-tts>=0.2.3",
 ]
 
 [build-system]
@@ -19,8 +42,7 @@ build-backend = "hatchling.build"
 source = "vcs"
 
 [tool.hatch.build.targets.wheel]
-# TODO: 実際のプロジェクトでは "src/your_package_name" に更新してください
-packages = ["src/project_name"]  # テンプレート用の空パッケージ
+packages = ["src/e2k_asr_eval"]
 
 [tool.ruff]
 line-length = 88

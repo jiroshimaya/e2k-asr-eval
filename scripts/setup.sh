@@ -229,12 +229,12 @@ main() {
     check_uv
 
     # Ask user if they want to use Claude Code
-    echo -n "Do you want to use Claude Code? [y/N]: "
-    read -r USE_CLAUDE_CODE
-    if [[ "$USE_CLAUDE_CODE" =~ ^[Yy]$ ]]; then
-        check_npm
-        check_claude_code
-    fi
+    #echo -n "Do you want to use Claude Code? [y/N]: "
+    #read -r USE_CLAUDE_CODE
+    #if [[ "$USE_CLAUDE_CODE" =~ ^[Yy]$ ]]; then
+    #    check_npm
+    #    check_claude_code
+    #fi
 
     check_github_cli
 
